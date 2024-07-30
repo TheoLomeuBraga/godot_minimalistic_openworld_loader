@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cihndrtdraas8"]
+
+[ext_resource type="Material" uid="uid://b4v4wh4xh0h1e" path="res://player/player_mat.tres" id="1_wpp0c"]
+[ext_resource type="Script" path="res://player/player.gd" id="2_hvxje"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mcfxy"]
+bottom_radius = 0.225
+
+[sub_resource type="SphereMesh" id="SphereMesh_7br0a"]
+
+[node name="Player" type="MeshInstance3D"]
+mesh = SubResource("CylinderMesh_mcfxy")
+surface_material_override/0 = ExtResource("1_wpp0c")
+script = ExtResource("2_hvxje")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0, 1.44852, 0)
+mesh = SubResource("SphereMesh_7br0a")
+surface_material_override/0 = ExtResource("1_wpp0c")
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
+transform = Transform3D(1.35135, 0, 0, 0, 1.35135, 0, 0, 0, 1.35135, 0, 1.35135, 8.10811)
